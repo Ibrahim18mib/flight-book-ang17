@@ -1,0 +1,49 @@
+<nav class="navbar sticky-top navbar-expand-lg bg-warning">
+  <div class="container">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto w-100 justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="#"
+            >Dashboard <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/airport"
+            >Airport <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/city">City</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/all-bookings">All Bookings</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/all-flight">All Flight</a>
+        </li>
+      </ul>
+    </div>
+    <form class="d-flex">
+      <!-- <input type="text" class="form-control me-2" placeholder="Search" /> -->
+      <label for="" style="padding-right: 20px; color:darkgreen; font-weight: bolder;">{{loggedUserData?.email}}</label>
+      <button class="btn btn-primary" type="button" (click)="logOff()">Log-OFF</button>
+    </form>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

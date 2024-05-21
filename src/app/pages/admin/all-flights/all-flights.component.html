@@ -1,0 +1,53 @@
+<div class="row pb-2">
+  <div class="col-12 mt-2 text-end">
+    <button class="btn btn-primary" routerLink="/new-flight">Add New</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Flight.No</th>
+          <th>Airline</th>
+          <th>Flight No</th>
+          <th>Arrival Airport</th>
+          <th>Departure Airport</th>
+          <th>Travel date</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of allFlightLists; let sr = index">
+          <td>{{ sr + 1 }}</td>
+          <td>
+            {{ flight.vendorName }}
+            <img
+              src="../../../../assets/favicon.ico"
+              alt="icon"
+              style="
+                padding-left: 5px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+              "
+            />
+            <!-- <img [src]="flight.vendorLogoUrl" alt="icon" style="width:50px;height: 50px;border-radius: 50%;"> -->
+          </td>
+
+          <td>{{ flight.flightNumber }}</td>
+          <td>{{ flight.arrivalAirportName }}</td>
+          <td>{{ flight.arrivalAirportCode }}</td>
+          <td>{{ flight.travelDate | date : "dd-MM-yy" }}</td>
+          <td>{{ flight.price }}</td>
+          <td>
+            <button class="btn btn-success" (click)="editFlight(flight.flightId)">Edit</button>
+            <button class="btn btn-danger mx-2">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

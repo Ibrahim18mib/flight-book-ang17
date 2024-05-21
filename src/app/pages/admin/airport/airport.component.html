@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-12 text-end">
+      <button class="btn btn-success " (click)="addNew()">Add New</button>
+      <button class="btn btn-success " (click)="bulkUpdatePort()">Bulky Update</button>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Flight.No</th>
+            <th>vendorName</th>
+            <th>emailId</th>
+            <th>customerCareNo</th>
+            <th>headeOffice</th>
+            <th>logoUrl</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr *ngFor="let port of AirportsLists.slice(0,5); let sr = index">
+              <td>{{ sr + 1 }}</td>
+              <td>
+                <input type="text" [(ngModel)]="port.vendorName" placeholder="Enter Flight">
+                </td>
+                <td>
+                  <input type="text" [(ngModel)]="port.emailId" placeholder="Enter Flight">
+                  </td>
+                  <td>
+                      <input type="text" [(ngModel)]="port.customerCareNo" placeholder="Enter Flight">
+                      </td>
+                      <td>
+                          <input type="text" [(ngModel)]="port.headeOffice" placeholder="Enter Flight">
+                          </td>
+                          <td>
+                              <input type="text" [(ngModel)]="port.logoUrl" placeholder="Enter Flight">
+                              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+  
