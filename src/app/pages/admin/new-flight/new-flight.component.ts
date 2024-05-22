@@ -26,7 +26,7 @@ export class NewFlightComponent implements OnInit {
     const localData = localStorage.getItem('FlightVendor');
     console.log('localStorage datainside:', localData);
     // this.flightObj.flightVendorId = JSON.parse(localData).vendorId;
-    this.flightObj.flightVendorId = 1;
+    this.flightObj.flightVendorId = 2;
   }
 
   ngOnInit(): void {
